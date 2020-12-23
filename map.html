@@ -20,10 +20,41 @@
       bottom: 0;
       width: 100%;
     }
+
+    
   </style>
 </head>
 
 <body>
+
+  <style>
+    .legend label,
+    .legend span {
+      display:block;
+      float:left;
+      height:15px;
+      width:20%;
+      text-align:center;
+      font-size:9px;
+      color:#808080;
+      }
+    </style>
+
+ 
+<div id='legend' style='display:none;'>
+  <strong>Wind Turbine Height in Meters</strong>
+  <nav class='legend clearfix'>
+    <span style='background:#ffbf47;'></span>
+    <span style='background:#1deded;'></span>
+    <span style='background:#fa00f6;'></span>
+    <label>30.4-100</label>
+    <label>100-150</label>
+    <label>150-199.4</label>
+   
+</div>
+
+
+
 
   <div id='map'></div>
 
@@ -40,13 +71,15 @@
       // ----------------------------------------------
 
       // Change to your location ----------------------
-      zoom: 14.38,
-      center: [-116.619585, 33.920603],
-      pitch: 55,
-      bearing: 25.6
+      zoom: 13.23,
+      center: [-116.603686, 33.914325],
+      pitch: 44.8,
+      bearing: 60
       // ----------------------------------------------
 
     });
+    map.legendControl.addLegend(document.getElementById('legend').innerHTML);
+    
 
     // Add geolocate control to the map.
     map.addControl(new mapboxgl.GeolocateControl({
@@ -74,9 +107,15 @@
           'sky-type': 'atmosphere',
           'sky-atmosphere-sun': [0.0, 0.0],
           'sky-atmosphere-sun-intensity': 15
+
+          
         }
       });
     });
+
+    
+    
+    
   </script>
 
 </body>
