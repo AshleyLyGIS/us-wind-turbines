@@ -158,45 +158,36 @@
 
         <img src="svg/wind_turbine.svg" class="svg-title">
         <h1>U.S. Wind Turbine Analysis</h1>
-        <h2>Authored by: Ashley Ly, December 2020</h2>
+        <h2>Authored by: Ashley Ly, © OpenStreetMap contributors</h2>
+        <h2>Date of Publication: December 2020</h2>
         <div class="row">
             <div class="first-column">
-                <h3>California's 88 State Parks</h3>
+                <h3>U.S. Wind Turbines</h3>
                 <p>
-                    California State Parks preserves the state's biological diversity and creates opportunities for
-                    outdoor recreational activities for anybody! California State Park can be visited year-round with
-                    diverse environments with any activity whether its hiking, biking, or just relaxing. This map
-                    displays all 88 state parks along with surrounding campgrounds, toilets, and recreational routes-
-                    the main necessities when visiting a state park. In the map, the state park entry points are
-                    labeled by the state park name and the
-                    state park recreational route is labeled by trail name.
-
-                    <hr class="styled">
+                   
+                
+                <hr>
                 <h3>Data Source</h3>
                 <p>
-                    Park Entry Points, Campgrounds, Buildings, and Park Routes data was collected from<a
-                        href="https://www.parks.ca.gov/?page_id=29682#:~:text=GIS%20Data%20Services%20%20%20%20Dataset%20Name,%20%20Structures.kml%20%204%20more%20rows%20"
-                        target=blank> California State Parks GIS Datasets</a>
-                    published by California Department of Parks and Recreation. Data accessed December, 2020. The data
-                    collected was then
-                    parsed and filtered through for only state parks, public use campground, all types of toilets and
-                    state park routes.
-                <p>
-                    Data is shown on Mapbox web map.
-                </p>
+                   <a
+                        href="https://eerscmap.usgs.gov/uswtdb"
+                        target=blank>U.S. Wind Turbine Database</a> filtered out only US states
+                   
 
-                <hr class="styled">
+                <hr>
                 <h3>Methods and Tools used in this project</h3>
                 <ul>
-                    <li>Data is shown on Mapbox web map</li>
-                    <li>GDAL and QGIS 3.14 to convert raster elevation units and create contours.</li>
+                    <li>Queried wind turbine CSV data with SQL in PostGIS</li>
+                    <li>Performed a tabular join in QGIS 3.14</li>
+                    <li>Clipped US wind speeds raster in QGIS 3.14</li>
+                    <li>3D wind turbine height data is shown on Mapbox web map</li>
                 </ul>
-
+                
 
                 <hr>
                 <h3>Project assets</h3>
                 <ul>
-                    <li>Point locations of US arches as <a href="arches_us.geojson" download>GeoJSON file</a></li>
+                    <li>Point locations of US Wind Turbines <a href="us_wind_turbines.geojson" download>GeoJSON file</a></li>
 
                 </ul>
 
