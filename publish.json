@@ -1,0 +1,5 @@
+{
+    "title": "U.S. Wind Tubines (as of 10/2020)",
+    "info": "A vector choropleth map of wind power capcity. A raster map of average speed with wind turbine locations. A interactive 3D mapbox map displaying wind turbine height. ", 
+    "coordinates": [38, -97]
+}

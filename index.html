@@ -3,7 +3,7 @@
 
 <head>
     <meta charset=utf-8 />
-    <title>California State Parks</title>
+    <title>U.S. Wind Turbine Analysis</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
@@ -20,7 +20,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: #c7c9c8;
+            background: white;
             font-family: 'Lato', sans-serif;
             font-weight: 300;
             color: #3d3d3d;
@@ -151,14 +151,14 @@
     <iframe src="map.html" width="100%" height="440px"></iframe>
     <section>
         <div class="linkbox">
-            <a href='map.html'>Full-screen version </a>
+            <a href='map.html'>Full-screen version </a>to view all wind turbines in the United States
         </div>
 
 
 
-
-        <h1>California State Parks with surrounding Campgrounds, Toilets, and Recreational Routes</h1>
-        <h2>Authored by: Ashley Ly</h2>
+        <img src="svg/wind_turbine.svg" class="svg-title">
+        <h1>U.S. Wind Turbine Analysis</h1>
+        <h2>Authored by: Ashley Ly, December 2020</h2>
         <div class="row">
             <div class="first-column">
                 <h3>California's 88 State Parks</h3>
@@ -167,15 +167,16 @@
                     outdoor recreational activities for anybody! California State Park can be visited year-round with
                     diverse environments with any activity whether its hiking, biking, or just relaxing. This map
                     displays all 88 state parks along with surrounding campgrounds, toilets, and recreational routes-
-                    the main  necessities  when visiting a state park. In the map, the state park entry points are
+                    the main necessities when visiting a state park. In the map, the state park entry points are
                     labeled by the state park name and the
                     state park recreational route is labeled by trail name.
 
                     <hr class="styled">
-                <h3>Data used in this project</h3>
+                <h3>Data Source</h3>
                 <p>
                     Park Entry Points, Campgrounds, Buildings, and Park Routes data was collected from<a
-                        href="https://www.parks.ca.gov/?page_id=29682#:~:text=GIS%20Data%20Services%20%20%20%20Dataset%20Name,%20%20Structures.kml%20%204%20more%20rows%20" target=blank> California State Parks GIS Datasets</a>
+                        href="https://www.parks.ca.gov/?page_id=29682#:~:text=GIS%20Data%20Services%20%20%20%20Dataset%20Name,%20%20Structures.kml%20%204%20more%20rows%20"
+                        target=blank> California State Parks GIS Datasets</a>
                     published by California Department of Parks and Recreation. Data accessed December, 2020. The data
                     collected was then
                     parsed and filtered through for only state parks, public use campground, all types of toilets and
@@ -184,16 +185,36 @@
                     Data is shown on Mapbox web map.
                 </p>
 
+                <hr class="styled">
+                <h3>Methods and Tools used in this project</h3>
+                <ul>
+                    <li>Data is shown on Mapbox web map</li>
+                    <li>GDAL and QGIS 3.14 to convert raster elevation units and create contours.</li>
+                </ul>
+
+
+                <hr>
+                <h3>Project assets</h3>
+                <ul>
+                    <li>Point locations of US arches as <a href="arches_us.geojson" download>GeoJSON file</a></li>
+
+                </ul>
+
+
 
 
 
             </div>
             <div class="column">
-                <img class="max-image-width" src="julia-pfeiffer-burns.jpg" title="Julia Pfeiffer Burns">
-                <div class="linkbox">Photograph from California Beaches webpage</div>
-                <img class="max-image-width" src="julia-pfeiffer-burns-campground.jpg"
-                    title="Julia Pfeiffer Burns Campground">
-                <div class="linkbox">Photograph from See Monterey webpage</div>
+                <img class="max-image-width" src="maps/US_Wind_Power_Capacity_1200px.jpg"
+                    title="US Wind Power Capacity">
+                <div class="linkbox"> <a href='maps/US_Wind_Power_Capacity_8000px.jpg'>High-resolution version </a>
+                </div>
+
+                <img class="max-image-width" src="maps/US_Wind_Speed_1200px.jpg" title="US Wind Speed">
+                <div class="linkbox"> <a href='maps/US_Wind_Speed_8000px.jpg'>High-resolution version </a>
+                </div>
+
 
             </div>
         </div>
@@ -204,50 +225,12 @@
         <hr class="styled">
         <div class="footer">
             <ul>
-                <li>Visit my Github account <a href='https://github.com/AshleyLyGIS'>@AshleyLyGIS</a>
-                </li>
-                <li>Check out my <a href="https://ashleylygis.wordpress.com">portfolio</a></li>
+                <li>Visit my Github account <a href='https://github.com/AshleyLyGIS'>@AshleyLyGIS</a></li>
+
             </ul>
         </div>
     </section>
-    <!-- Code injected by live-server -->
-    <script type="text/javascript">
-        // <![CDATA[  <-- For SVG support
-        if ('WebSocket' in window) {
-            (function () {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-                        }
-                        parent.appendChild(elem);
-                    }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function (msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        }
-        else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-	// ]]>
-    </script>
+
 </body>
 
 </html>
