@@ -92,6 +92,12 @@
             width: 100%;
         }
 
+        .max-image-legend {
+            width: 20%;
+            float: right;
+        }
+
+
         /* add custom style class here */
 
         .linkbox {
@@ -152,25 +158,33 @@
     <section>
         <div class="linkbox">
             <a href='map.html'>Full-screen version </a>to view all wind turbines in the United States
+            <img class="max-image-legend" src="maps/mapbox_legend.jpg" title="US Wind Power Capacity">
+            <h1>U.S. Wind Turbine Analysis</h1>
         </div>
 
 
 
         <img src="svg/wind_turbine.svg" class="svg-title">
-        <h1>U.S. Wind Turbine Analysis</h1>
-        <h2>Authored by: Ashley Ly, © OpenStreetMap contributors</h2>
-        <h2>Date of Publication: December 2020</h2>
+        <h2>Authored by: Ashley Ly, © OpenStreetMap contributors, December 2020</h2>
+
         <div class="row">
             <div class="first-column">
-                <p>
+                <h3>U.S. Wind Turbines</h3>
+                <p>Wind turbines utilize wind to generate electricity.
+                    In the United States, wind energy demands are increasing and onshore development is rapidly growing.
+                    A huge factor that drives wind turbine development is wind flow pattern and speeds. Although, some
+                    may claim
+                    that wind turbines are eyesores due to the visuals and height, wind power is an essential for clean
+                    energy.
 
 
                     <hr>
                 <h3>Data Sources</h3>
                 <p>
-                    <a href="https://eerscmap.usgs.gov/uswtdb" target=blank>U.S. Wind Turbine Database</a> filtered out
-                    only US states
-
+                    <li><a href="https://eerscmap.usgs.gov/uswtdb" target=blank>U.S. Wind Turbine Database</a></li>
+                    <li><a href=" https://globalwindatlas.info/" target=blank>Global Wind Atlas</a></li>
+                    <li><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html"
+                            target=blank>U.S. Census Bureau TIGER Products</a></li>
 
                     <hr>
                 <h3>Methods and Tools</h3>
@@ -182,7 +196,7 @@
                 </ul>
 
 
-                <hr>
+                <hr class="styled">
                 <h3>Project assets</h3>
                 <ul>
                     <li>Point locations of US Wind Turbines <a href="us_wind_turbines.geojson" download>GeoJSON file</a>
@@ -204,6 +218,10 @@
                 <img class="max-image-width" src="maps/US_Wind_Speed_1200px.jpg" title="US Wind Speed">
                 <div class="linkbox"> <a href='maps/US_Wind_Speed_8000px.jpg'>High-resolution version </a>
                 </div>
+
+                <img class="max-image-width" src="maps/turbines.jpg" title="Turbines">
+                <div class="linkbox">Photograph from Norton Abrasives</div>
+
 
 
             </div>
